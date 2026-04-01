@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#2d5a2c">
+    <title>El Bosque de la Paz Juventud</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Contenedor principal del bosque -->
+    <div class="forest-container">
+        <!-- Árboles de fondo decorativos -->
+        <div class="bg-trees"></div>
+        
+        <!-- Header con contador de árboles sembrados -->
+        <header class="stats-header">
+            <div class="tree-counter">
+                <span class="tree-icon">🌳</span>
+                <span id="totalTrees">0</span>
+                <span class="tree-label">árboles sembrados</span>
+            </div>
+        </header>
+
+        <!-- Área principal del águila humanoide -->
+        <div class="eagle-area">
+            <div class="eagle-character" id="eagleCharacter">
+                <div class="eagle-avatar">
+                    <img src="assets/images/eagle.png" alt="Águila Guardiana" id="eagleImage" onerror="this.src='https://via.placeholder.com/150x150?text=🦅'">
+                </div>
+                <div class="speech-bubble" id="speechBubble">
+                    <p id="eagleMessage">¡Bienvenido, joven guardián! Soy Kuna, el guardián del bosque. Elige un árbol y encuentra la paz interior.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Árbol en crecimiento (visual) -->
+        <div class="growing-tree-area">
+            <div class="tree-stage" id="treeStage">
+                <div class="tree-visual">🌱</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contador regresivo -->
+        <div class="timer-container">
+            <div class="timer-label">Tiempo de meditación</div>
+            <div class="timer-display" id="timerDisplay">00:00:00</div>
+        </div>
+
+        <!-- Panel de selección de tiempo (horas) -->
+        <div class="time-selection" id="timeSelection">
+            <button class="time-btn" data-hours="1">🌱 1 Hora</button>
+            <button class="time-btn" data-hours="2">🌿 2 Horas</button>
+            <button class="time-btn" data-hours="3">🌳 3 Horas</button>
+            <button class="time-btn" data-hours="4">🌲 4 Horas</button>
+        </div>
+
+        <!-- Mensaje de estado -->
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <!-- PANTALLA DE BLOQUEO (simula bloqueo del celular) -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="lock-content">
+            <div class="lock-icon">🔒</div>
+            <h2>Bosque Activo</h2>
+            <p id="lockMessage">Tu árbol está creciendo. No salgas de esta pantalla.</p>
+            <div class="lock-timer-mini" id="lockTimer">00:00:00</div>
+            <div class="warning-text">⚠️ Si sales de esta pantalla, perderás tu progreso ⚠️</div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para pérdida de progreso -->
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>¡Alto, Guardián!</h3>
+            <p id="modalMessage">¿Estás seguro que quieres abandonar? Perderás todo el progreso de tu árbol.</p>
+            <button id="confirmAbandon" class="danger-btn">Sí, abandonar</button>
+            <button id="cancelAbandon" class="safe-btn">Continuar meditando</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
