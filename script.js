@@ -1,4 +1,4 @@
- // El Bosque de la Paz Juventud
+// El Bosque de la Paz Juventud
 // Versión simplificada y funcional
 
 // ========== VARIABLES ==========
