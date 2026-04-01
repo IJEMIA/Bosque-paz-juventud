@@ -1,53 +1,35 @@
-/* Reset y estilos  base */ 
+/* Reset y estilos base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    font-family: 'Segoe UI', 'Poppins', 'Arial', sans-serif;
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
     background: linear-gradient(135deg, #1a472a 0%, #2d5a2c 50%, #3d7a3a 100%);
     min-height: 100vh;
     overflow-x: hidden;
-    position: relative;
 }
 
-/* Contenedor principal del bosque */
+/* Contenedor principal */
 .forest-container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     min-height: 100vh;
     position: relative;
-    z-index: 1;
 }
 
-/* Árboles de fondo decorativos */
-.bg-trees {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><path fill="%232d5a2c" opacity="0.1" d="M0,800 L0,600 Q100,550 200,600 Q300,650 400,600 Q500,550 600,600 Q700,650 800,600 Q900,550 1000,600 Q1100,650 1200,600 L1200,800 Z"/><path fill="%231a472a" opacity="0.1" d="M0,800 L0,650 Q150,600 300,650 Q450,700 600,650 Q750,600 900,650 Q1050,700 1200,650 L1200,800 Z"/></svg>');
-    background-repeat: repeat-x;
-    background-position: bottom;
-    background-size: 300px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Header con contador de árboles */
+/* Header con contador */
 .stats-header {
     background: rgba(30, 40, 20, 0.85);
     backdrop-filter: blur(10px);
     border-radius: 60px;
     padding: 12px 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,215,0,0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .tree-counter {
@@ -61,14 +43,12 @@ body {
 
 .tree-icon {
     font-size: 2rem;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 }
 
 #totalTrees {
     font-size: 2rem;
     font-weight: bold;
     color: #ffd700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .tree-label {
@@ -76,115 +56,64 @@ body {
     color: #e8e8e8;
 }
 
-/* Área del águila humanoide */
-.eagle-area {
+/* Mensaje de bienvenida */
+.welcome-message {
+    text-align: center;
+    color: white;
     margin-bottom: 30px;
-}
-
-.eagle-character {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(0,0,0,0.3);
-    border-radius: 80px 80px 80px 30px;
-    padding: 15px;
-    backdrop-filter: blur(5px);
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
-}
-
-.eagle-avatar {
-    flex-shrink: 0;
-}
-
-.eagle-avatar img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ffd966;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    background: #2c5a2a;
-}
-
-/* Burbuja de diálogo */
-.speech-bubble {
-    position: relative;
-    background: rgba(255,248,225,0.95);
-    border-radius: 20px;
-    padding: 15px 20px;
-    flex: 1;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    backdrop-filter: blur(5px);
-}
-
-.speech-bubble::before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-width: 10px 15px 10px 0;
-    border-style: solid;
-    border-color: transparent rgba(255,248,225,0.95) transparent transparent;
-}
-
-#eagleMessage {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    color: #2c3e2f;
-    font-weight: 500;
-    margin: 0;
-}
-
-/* Área del árbol en crecimiento */
-.growing-tree-area {
-    background: rgba(0,0,0,0.2);
-    border-radius: 30px;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+}
+
+.welcome-message h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.welcome-message p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Área del árbol */
+.growing-tree-area {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 30px;
     margin-bottom: 20px;
     text-align: center;
 }
 
-.tree-stage {
-    text-align: center;
-}
-
 .tree-visual {
-    font-size: 5rem;
+    font-size: 6rem;
     transition: all 0.3s ease;
-    filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.3));
 }
 
 .progress-bar-container {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     height: 12px;
-    margin-top: 15px;
+    margin-top: 20px;
     overflow: hidden;
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, #4caf50, #8bc34a);
+    background: linear-gradient(90deg, #ffd966, #ffb347);
     width: 0%;
     height: 100%;
     border-radius: 20px;
-    transition: width 1s linear;
-    box-shadow: 0 0 10px rgba(76,175,80,0.5);
+    transition: width 0.5s linear;
 }
 
 /* Temporizador */
 .timer-container {
     text-align: center;
     margin-bottom: 25px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     border-radius: 40px;
-    padding: 15px;
-    backdrop-filter: blur(5px);
+    padding: 20px;
 }
 
 .timer-label {
@@ -200,14 +129,13 @@ body {
     font-weight: bold;
     font-family: 'Courier New', monospace;
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(0,0,0,0.5);
     letter-spacing: 3px;
 }
 
-/* Botones de selección de tiempo */
+/* Botones */
 .time-selection {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-bottom: 20px;
 }
@@ -215,26 +143,30 @@ body {
 .time-btn {
     background: linear-gradient(135deg, #3d6b3a, #2c5a2a);
     border: none;
-    padding: 15px 10px;
+    padding: 15px;
     border-radius: 50px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #fff3cf;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,215,0,0.3);
+    border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .time-btn:hover {
     transform: translateY(-2px);
     background: linear-gradient(135deg, #4c7a48, #3d6b3a);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     border-color: #ffd966;
 }
 
 .time-btn:active {
     transform: translateY(0);
+}
+
+.time-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Mensaje de estado */
@@ -246,7 +178,7 @@ body {
     min-height: 50px;
 }
 
-/* PANTALLA DE BLOQUEO */
+/* Pantalla de bloqueo */
 .lock-screen {
     position: fixed;
     top: 0;
@@ -258,8 +190,7 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -270,17 +201,11 @@ body {
 .lock-content {
     text-align: center;
     color: white;
-    padding: 30px;
-    background: rgba(0,0,0,0.7);
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 50px;
     border: 2px solid #ffd966;
     max-width: 90%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(255,217,102,0.3); }
-    50% { box-shadow: 0 0 40px rgba(255,217,102,0.6); }
 }
 
 .lock-icon {
@@ -294,33 +219,25 @@ body {
 }
 
 .lock-content p {
-    margin-bottom: 15px;
-    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .lock-timer-mini {
     font-size: 2rem;
     font-family: monospace;
-    background: rgba(0,0,0,0.5);
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
     border-radius: 20px;
     margin: 15px 0;
-    letter-spacing: 2px;
 }
 
 .warning-text {
     color: #ff6b6b;
     font-size: 0.8rem;
     margin-top: 10px;
-    animation: blink 1s infinite;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
-/* MODAL DE ADVERTENCIA */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -329,7 +246,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
@@ -344,18 +261,6 @@ body {
     text-align: center;
     border: 2px solid #ffd966;
     position: relative;
-    animation: slideDown 0.3s ease;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .close-modal {
@@ -390,12 +295,6 @@ body {
     cursor: pointer;
     margin: 5px;
     font-weight: bold;
-    transition: all 0.3s;
-}
-
-.danger-btn:hover {
-    background: #a53528;
-    transform: scale(1.05);
 }
 
 .safe-btn {
@@ -407,36 +306,12 @@ body {
     cursor: pointer;
     margin: 5px;
     font-weight: bold;
-    transition: all 0.3s;
 }
 
-.safe-btn:hover {
-    background: #2c5a2a;
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 480px) {
     .forest-container {
         padding: 15px;
-    }
-    
-    .eagle-character {
-        flex-direction: column;
-        text-align: center;
-        border-radius: 40px;
-    }
-    
-    .speech-bubble::before {
-        left: 50%;
-        top: -15px;
-        transform: translateX(-50%);
-        border-width: 0 10px 15px 10px;
-        border-color: transparent transparent rgba(255,248,225,0.95) transparent;
-    }
-    
-    .time-selection {
-        grid-template-columns: 1fr 1fr;
     }
     
     .timer-display {
@@ -444,57 +319,21 @@ body {
     }
     
     .tree-visual {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
     
-    .eagle-avatar img {
-        width: 70px;
-        height: 70px;
+    .time-btn {
+        font-size: 0.9rem;
+        padding: 12px;
     }
 }
 
-/* Efecto de partículas (opcional) */
-.forest-container::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 40%, rgba(255,217,102,0.05) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Animación para el árbol cuando crece */
+/* Animación de crecimiento */
 @keyframes grow {
     0% { transform: scale(0.8); opacity: 0.5; }
     100% { transform: scale(1.2); opacity: 1; }
 }
 
-.tree-stage.grow-animation .tree-visual {
+.grow-animation {
     animation: grow 0.5s ease;
-}
-
-/* Estilo para botones deshabilitados */
-.time-btn.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.time-btn.disabled:hover {
-    transform: none;
-    background: linear-gradient(135deg, #3d6b3a, #2c5a2a);
-}
-
-/* Scroll suave */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Selección de texto */
-::selection {
-    background: #ffd966;
-    color: #1a472a;
-}
+} 
